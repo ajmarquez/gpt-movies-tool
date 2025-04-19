@@ -1,6 +1,6 @@
 import requests
 
-API_KEY = "4cfd363a10bf9c1bb5bea153f1645147"
+API_KEY = XXX
 BASE_URL = "https://api.themoviedb.org/3"
 
 def get_latest_movies(country="DE", provider_id="8"):  # Netflix = 8
