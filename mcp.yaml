@@ -1,0 +1,22 @@
+name: tmdb-movie-finder
+description: Fetches the latest movies available on specific streaming services in a given country using the TMDb API.
+
+type: openai-function
+
+functions:
+  - name: get_movies
+    description: Get latest movies by country and streaming provider.
+    parameters:
+      type: object
+      properties:
+        country:
+          type: string
+          description: ISO 3166-1 alpha-2 country code (e.g., DE, US, FR).
+        provider_id:
+          type: string
+          description: TMDb watch provider ID (e.g., 8 for Netflix, 337 for Disney+).
+      required: [country, provider_id]
+    handler:
+      type: http
+      url: http://localhost:8000/movies
+      method: GET
